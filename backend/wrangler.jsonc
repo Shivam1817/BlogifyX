@@ -2,7 +2,11 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "backend",
   "main": "src/index.ts",
-  "compatibility_date": "2025-02-18"
+  "compatibility_date": "2025-02-18",
+  "vars": {
+    "DATABASE_URL": "prisma://accelerate.prisma-data.net/?api_key=eyJhbGci"
+  }
+
   // "compatibility_flags": [
   //   "nodejs_compat"
   // ],
@@ -36,3 +40,6 @@
   //   "head_sampling_rate": 1
   // }
 }
+
+
+//DATABASE_URL="prisma://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiNmJkYjYwMGYtMWZjMC00ODJjLWJjZWYtYmY5ODE0NmU1ODA3IiwidGVuYW50X2lkIjoiYzM1ZWRhZDY5NzZkOGU4NjM2ZDNkZjU1MGJlMGU5OTllODg0NTc0MGQ3OGI0OThhNzI4MGMxNDY3NTFiMGYyOCIsImludGVybmFsX3NlY3JldCI6IjFmOWFiOGY1LTMzOWYtNDllYy1hMmI2LWIyNTFhMDYzZTAyZiJ9.GMnUdVWEjwROJ-b9epZN-jOWPkJ8m5tKqH47iCIiXR0"
