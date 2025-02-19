@@ -4,7 +4,7 @@
   "main": "src/index.ts",
   "compatibility_date": "2025-02-18",
   "vars": {
-    "DATABASE_URL": "prisma://accelerate.prisma-data.net/?api_key=eyJhbGci"
+    "DATABASE_URL": "$DATABASE_API"
   }
 
   // "compatibility_flags": [
