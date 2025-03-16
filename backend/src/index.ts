@@ -49,7 +49,8 @@ app.post('/api/v1/signin', async(c) => {
   const body = await c.req.json();
   const user = await prisma.user.findUnique({
     where:{
-      email: body.email
+      email: body.email,
+      password: body.password
     }
   });
   if(!user){
