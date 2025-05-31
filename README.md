@@ -23,7 +23,7 @@ Blogify is a modern blogging application inspired by platforms like Medium, desi
 1. Clone the repository:
 
 ```bash
-git clone[ https://github.com/Shivam1817/BlogifyX](https://github.com/Shivam1817/BlogifyX)
+git clone https://github.com/Shivam1817/BlogifyX
 ```
 2. Navigate to the project directory:
 ```bash
