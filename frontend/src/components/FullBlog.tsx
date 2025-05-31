@@ -3,6 +3,9 @@ import { Blog } from "../hooks/index";
 import { Avatar } from "./BlogCard";
 
 export const FullBlog = ({ blog }: {blog: Blog}) => {
+
+    const currentDate = new Date().toLocaleDateString();
+
     return <div>
         <Appbar />
         <div className="flex justify-center">
@@ -12,7 +15,7 @@ export const FullBlog = ({ blog }: {blog: Blog}) => {
                     {blog.title}
                 </div>
                 <div className="text-gray-500 pt-2">
-                    Post on 31st March 2025 
+                    {currentDate}
                 </div>
                 <div className="pt-4">
                     {blog.content}
