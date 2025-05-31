@@ -54,7 +54,7 @@ npm install
 
     ```
     name = "backend"
-    compatibility_date = "2023-12-01"
+    compatibility_date = "2025-12-01"
 
     [vars]
     DATABASE_URL="PASTE the PRISMA URL (Connection Pool)"
