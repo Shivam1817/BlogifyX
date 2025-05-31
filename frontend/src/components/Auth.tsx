@@ -10,13 +10,14 @@ export const Auth = ({type}: {type: "signup" | "signin"}) => {
     const [postInputs, setPostInputs] = useState<SignupInput>({
         name: "",
         password: "",
+        //if dont work change it to email: "",
         username: ""
     })
 
     async function sendRequest (){
         try{
             const response = await axios.post(`${BACKEND_URL}/api/v1/user/${type === "signup"?"signup":"signin"}` , postInputs);
-            const jwt = response.data;
+            const { jwt } = response.data;
             localStorage.setItem("token",jwt);
             navigate("/blogs");
         }catch(e){
@@ -47,7 +48,7 @@ export const Auth = ({type}: {type: "signup" | "signin"}) => {
                             name: e.target.value
                         }))
                     }}/> : null}
-                    <LabelledInput label="Username" placeholder="Enter your username" onChange={(e) =>{
+                    <LabelledInput label="Email" placeholder="Enter your email" onChange={(e) =>{
                         setPostInputs(c => ({
                             ...c, 
                             username: e.target.value

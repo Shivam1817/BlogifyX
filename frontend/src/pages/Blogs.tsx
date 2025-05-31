@@ -1,27 +1,37 @@
+import { Appbar } from "../components/Appbar"
 import { BlogCard } from "../components/BlogCard"
+import { BlogSkeleton } from "../components/BlogSkeleton";
+import { useBlogs } from "../hooks";
 
 export const Blogs = () => {
-    return <div className="flex justify-center">
-        <div className="justify-center max-w-xl">
-            <BlogCard 
-                authorName = {"Shivam Gupta"}
-                title = {"How an Ugly Single-Page Website Makes $5,000 a Month With Affiliate Marketing"}
-                content = {"How an Ugly Single-Page Website Makes $5,000 a Month With Affiliate Marketing How an Ugly Single-Page Website Makes $5,000 a Month With Affiliate Marketing"}
-                publishedDate="3rd Apr 2025"
-            />
-            <BlogCard 
-                authorName = {"Shivam Gupta"}
-                title = {"How an Ugly Single-Page Website Makes $5,000 a Month With Affiliate Marketing"}
-                content = {"How an Ugly Single-Page Website Makes $5,000 a Month With Affiliate Marketing How an Ugly Single-Page Website Makes $5,000 a Month With Affiliate Marketing"}
-                publishedDate="3rd Apr 2025"
-            />
-            <BlogCard 
-                authorName = {"Shivam Gupta"}
-                title = {"How an Ugly Single-Page Website Makes $5,000 a Month With Affiliate Marketing"}
-                content = {"How an Ugly Single-Page Website Makes $5,000 a Month With Affiliate Marketing How an Ugly Single-Page Website Makes $5,000 a Month With Affiliate Marketing"}
-                publishedDate="3rd Apr 2025"
-            />
+
+    const {loading , blogs} = useBlogs();
+
+    if (loading) {
+        return <div>
+            <Appbar /> 
+            <div  className="flex justify-center">
+                <div>
+                    <BlogSkeleton />
+                </div>
+            </div>
         </div>
-        
+    }
+
+    return <div>
+        <Appbar/>
+        <div className="flex justify-center">
+            <div >
+                {blogs.map(blog => <BlogCard 
+                    id = {blog.id}
+                    //adding key
+                    key = {blog.id}
+                    authorName = {blog.author.name || "Anonymous"}
+                    title = {blog.title}
+                    content = {blog.content}
+                    publishedDate="3rd Apr 2025"
+                />)}
+            </div>
+        </div>
     </div>
 }
